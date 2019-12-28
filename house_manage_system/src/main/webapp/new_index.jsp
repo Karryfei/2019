@@ -64,14 +64,14 @@
 							</div>
 							<div class="modal-body">
 								<form class="form-horizontal" role="form"
-									action="${pageContext.request.contextPath }/user/register.mvc"
+									action="user/register.do"
 									method="post">
 
 									<div class="form-group">
 										<label for="inputUsername" class="col-sm-2 control-label">用户名</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="inputUsername"
-												name="username" />
+												name="name" />
 										</div>
 									</div>
 									<div class="form-group">

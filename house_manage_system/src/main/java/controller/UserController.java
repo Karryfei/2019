@@ -37,19 +37,9 @@ public class UserController {
 
 	// 用户注册
 	@RequestMapping("register")
-	public String register(@RequestParam(value = "username") String username,@RequestParam(value = "password") String password,
-			@RequestParam(value = "sex") Integer sex,
-			@RequestParam(value = "tel") String tel,@RequestParam(value = "email") String email,
-			@RequestParam(value = "address") String address, HttpSession session) {
-		System.out.println(username+"--"+password+"--"+"--"+sex+"--"+tel+"--"+email+"--"+address+"--");
-		User user = new User();
-		user.setName(username);
-		user.setPassword(password);
-		user.setSex(sex);
-		user.setTel(tel);
-		user.setEmail(email);
-		user.setAddress(address);
-		service.insert(user);
+	public String register(User u) {
+		System.out.println(u.getName()+"--"+u.getPassword()+"--"+u.getSex()+"--"+u.getTel()+"--"+u.getEmail()+"--"+u.getAddress()+"--");
+		service.insert(u);
 		return "redirect:/login.html";
 	
 	}
