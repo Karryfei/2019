@@ -2,7 +2,6 @@ package model;
 
 public class House {
 	private Integer id;
-	private Integer userid;
 	private String topic;  //标题
 	private String position;  //地区
 	private String posidetail;  //详细地址
@@ -93,12 +92,6 @@ public class House {
 	}
 	public void setPosidetail(String posidetail) {
 		this.posidetail = posidetail;
-	}
-	public Integer getUserid() {
-		return userid;
-	}
-	public void setUserid(Integer userid) {
-		this.userid = userid;
 	}
 	public String getName() {
 		return name;

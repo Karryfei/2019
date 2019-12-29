@@ -28,6 +28,6 @@ public interface HouseDao {
 	public House selectById(int id);
 	
 	//新增
-	@Insert("insert into hms_house (topic,userid,position,posidetail,shape,area,houseage,price,type,img,creattime,description ) values(#{topic},#{userid},#{position},#{posidetail},#{shape},#{area},#{houseage},#{price},#{type},#{img},#{creattime},#{description})")
+	@Insert("insert into hms_house (topic,position,posidetail,shape,area,houseage,price,type,img,creattime,description,name,tel,email,unitPrice ) values(#{topic},#{position},#{posidetail},#{shape},#{area},#{houseage},#{price},#{type},#{img},#{creattime},#{description},#{name},#{tel},#{email},#{unitPrice})")
 	public void insert(House h);
 }

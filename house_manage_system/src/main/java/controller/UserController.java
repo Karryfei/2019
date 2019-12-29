@@ -29,7 +29,7 @@ public class UserController {
 		User user = service.login(u);
 		if (num.equalsIgnoreCase(code) && user != null) {
 			s.setAttribute("user", user);
-			return "redirect:/index.html";
+			return "redirect:/index.jsp";
 		} else {
 			return "redirect:/login.html";
 		}
@@ -48,7 +48,7 @@ public class UserController {
 	@RequestMapping("outlogin")
 	public String login(HttpSession s) {
 		s.removeAttribute("loginUser");
-		return "redirect:/login.html";
+		return "redirect:/new_index.jsp";
 	}
 
 	// 查询全部

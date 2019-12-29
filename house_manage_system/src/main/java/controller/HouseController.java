@@ -63,9 +63,9 @@ public class HouseController {
         h.setCreattime(df.format(new Date()));// new Date()为获取当前系统时间
 		h.setImg(files);
 		User user= (User) s.getAttribute("user");
-		h.setUserid(user.getId());
+//		h.setUserid(user.getId());
 		service.insert(h);
-		return "redirect:/index.html";
+		return "redirect:/index.jsp";
 	}
 	//查看房子详情
 	@RequestMapping("detail")

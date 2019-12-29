@@ -31,10 +31,11 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">二手房</a></li>
-						<li><a href="#">新房</a></li>
-						<li><a href="#">租房</a></li>
-						<li><a href="#">海外</a></li>
+						<li class="active"><a href="login.html">公寓</a></li>
+						<li><a href="login.html">住宅</a></li>
+						<li><a href="login.html">工业厂房</a></li>
+						<li><a href="login.html">别墅</a></li>
+						<li><a href="login.html">商业办公</a></li>
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
@@ -64,56 +65,55 @@
 							</div>
 							<div class="modal-body">
 								<form class="form-horizontal" role="form"
-									action="user/register.do"
-									method="post">
+									action="user/register.do" method="post">
 
 									<div class="form-group">
 										<label for="inputUsername" class="col-sm-2 control-label">用户名</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="inputUsername"
-												name="name" />
+												name="name" style="width: 300px" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputPassword" class="col-sm-2 control-label">密码</label>
 										<div class="col-sm-10">
 											<input type="password" class="form-control"
-												id="inputPassword" name="password" />
+												id="inputPassword" name="password" style="width: 300px" />
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label for="inputSex" class="col-sm-2 control-label">性别</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control" id="inputSex"
-												name="sex" />
+											<input name="sex" type="radio" value="0" checked="checked" />男
+											<input name="sex" type="radio" value="1"/>女
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputTel" class="col-sm-2 control-label">手机号</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="inputTel"
-												name="tel" />
+												name="tel" style="width: 300px" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail" class="col-sm-2 control-label">邮箱</label>
 										<div class="col-sm-10">
 											<input type="email" class="form-control" id="inputEmail"
-												name="email" />
+												name="email" style="width: 300px" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputAddress" class="col-sm-2 control-label">地址</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="inputAddress"
-												name="address" />
+												name="address" style="width: 300px" />
 										</div>
 									</div>
 
 									<div class="form-group">
 										<div class="col-sm-offset-2 col-sm-10">
-											<button type="submit" class="btn btn-default">注册</button>
+											<button type="submit" class="btn btn-default btn-primary">注册</button>
 										</div>
 									</div>
 								</form>
