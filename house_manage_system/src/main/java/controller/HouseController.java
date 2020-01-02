@@ -17,7 +17,7 @@ import model.User;
 import service.HouseService;
 
 @Controller
-@RequestMapping("/house")
+@RequestMapping("house")
 public class HouseController {
 	@Autowired
 	HouseService service;
@@ -34,13 +34,24 @@ public class HouseController {
 
 	// 根据搜索条件查找房子信息
 	@RequestMapping("find")
-	public String findHouse(String find, ModelMap m) {
-		String txt;
+	public String findHouse(String find, ModelMap m,String[] condition) {
+		String txt=null;
 		if (!(find == null)) {
 			txt = " where topic like '%" + find + "%'";
 		} else {
 			txt = null;
 		}
+		if(condition != null && condition.length !=0) {
+			if(condition.length == 1) {
+				txt= "where "+condition[0];
+			}else {
+				txt= "where "+condition[0];
+				for(int i=condition.length-1;i>=1;i--) {
+					txt= txt + " and "+ condition[i];
+				}
+			}
+		}
+		
 		m.addAttribute("findSize", service.findHouse(txt).size());
 		m.addAttribute("findInfo", service.findHouse(txt));
 		return "findHouseInfo";
@@ -63,15 +74,31 @@ public class HouseController {
         h.setCreattime(df.format(new Date()));// new Date()为获取当前系统时间
 		h.setImg(files);
 		User user= (User) s.getAttribute("user");
-//		h.setUserid(user.getId());
+		h.setUserid(user.getId());
 		service.insert(h);
-		return "redirect:/index.jsp";
+		return "redirect:/index.html";
 	}
 	//查看房子详情
 	@RequestMapping("detail")
 	public String detail(int id,ModelMap m) {
 		m.put("house", service.selectById(id));
-		System.out.println(service.selectById(id).getUnitPrice());
 		return "housedetail";
 	}
+	//删除
+	@RequestMapping("delete")
+	public String delete(int houseid,HttpSession session,ModelMap m) {
+		int userid = ((User) session.getAttribute("user")).getId();
+		service.delete(houseid, userid);
+		m.put("house", service.selectByUserid(userid));
+		return "postHouseInfo";
+	}
+	//
+	@RequestMapping("selectByUserid")
+	public String selectByUserid(HttpSession session,ModelMap m) {
+		int id = ((User) session.getAttribute("user")).getId();
+		m.put("house", service.selectByUserid(id));
+		
+		return "postHouseInfo";
+	}
+	
 }

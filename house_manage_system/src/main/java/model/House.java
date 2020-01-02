@@ -1,6 +1,7 @@
 package model;
 
 public class House {
+	private Integer userid;
 	private Integer id;
 	private String topic;  //标题
 	private String position;  //地区
@@ -20,6 +21,12 @@ public class House {
 	private String[] types= {"公寓","住宅","工业厂房","别墅","商业办公"};
 	public String getTypeName() {
 		return types[type];
+	}
+	public Integer getUserid() {
+		return userid;
+	}
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 	public Integer getId() {
 		return id;

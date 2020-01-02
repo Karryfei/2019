@@ -44,7 +44,7 @@
 						<button type="submit" class="btn btn-default">搜索</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">登录</a></li>
+						<li><a href="login.html">登录</a></li>
 						<li><a id="modal-686965" href="#modal-container-686965"
 							role="button" class="btn" data-toggle="modal">注册</a></li>
 					</ul>

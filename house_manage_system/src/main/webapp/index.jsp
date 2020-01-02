@@ -91,6 +91,7 @@
 			</ul>
 		</div>
 	</div> -->
+	<hr>
 				<div class="nav">
 					<form action="" method="">
 						<table border="0" cellspacing="10px" cellpadding="">

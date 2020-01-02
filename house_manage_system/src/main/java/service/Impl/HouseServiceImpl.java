@@ -8,19 +8,20 @@ import org.springframework.stereotype.Service;
 import dao.HouseDao;
 import model.House;
 import service.HouseService;
+
 @Service
 public class HouseServiceImpl implements HouseService {
 	@Autowired
 	HouseDao dao;
 
 	public List<House> select(String txt, Integer page, Integer limit) {
-		
-		return dao.select(txt,null);
+
+		return dao.select(txt, null);
 	}
 
 	public House selectById(Integer id) {
-		House house=dao.selectById(id);
-		house.setUnitPrice((int)(house.getPrice()*10000/house.getArea()));
+		House house = dao.selectById(id);
+		house.setUnitPrice((int) (house.getPrice() * 10000 / house.getArea()));
 		return house;
 	}
 
@@ -34,6 +35,14 @@ public class HouseServiceImpl implements HouseService {
 
 	public void insert(House h) {
 		dao.insert(h);
+	}
+
+	public List<House> selectByUserid(int id) {
+		return dao.selectByUserid(id);
+	}
+
+	public void delete(int houseid, int userid) {
+		dao.delete(houseid, userid);
 	}
 
 }

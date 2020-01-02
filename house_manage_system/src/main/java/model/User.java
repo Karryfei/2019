@@ -1,7 +1,7 @@
 package model;
 
 public class User{
-
+	private String regdate;
 	private Integer id;
 	private String name;  
 	private String password;
@@ -13,6 +13,12 @@ public class User{
 	public String getSexName(){
 		return sexs[sex];
 		}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
 	public Integer getId() {
 		return id;
 	}
