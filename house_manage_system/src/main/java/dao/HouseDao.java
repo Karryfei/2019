@@ -13,7 +13,7 @@ import model.House;
 @Repository
 public interface HouseDao {
 	// 查询房子内容
-	@Select("select * from hms_house ${txt} ${limit}")
+	@Select("select * from hms_house ${txt} ${limit} order by creattime desc")
 	public List<House> select(@Param("txt") String txt, @Param("limit") String limit);
 
 	// 查询数目
@@ -21,22 +21,21 @@ public interface HouseDao {
 	public int selectHouseCount(@Param("txt") String txt);
 
 	// 根据条件查找
-	@Select("select * from hms_house ${txt}")
+	@Select("select * from hms_house ${txt} order by creattime desc")
 	public List<House> findHouse(@Param("txt") String txt);
 
 	// 根据房子id查询
 	@Select("select hms_house.*,hms_user.* from hms_house left join hms_user on hms_house.userid=hms_user.id where hms_house.id = #{id}")
 	public House selectById(int id);
 
-	// 新增
-	@Insert("insert into hms_house (topic,position,posidetail,shape,area,houseage,price,type,img,creattime,description,name,tel,email,unitPrice ) values(#{topic},#{position},#{posidetail},#{shape},#{area},#{houseage},#{price},#{type},#{img},#{creattime},#{description},#{name},#{tel},#{email},#{unitPrice})")
-	public void insert(House h);
-
 	// 根据用户id查询
 	@Select("select hms_house.*,hms_user.* from hms_house left join hms_user on hms_house.userid=hms_user.id where hms_house.userid = #{id}")
 	public List<House> selectByUserid(int id);
 
-	//删除
+	// 新增
+	@Insert("insert into hms_house (topic,userid,position,posidetail,shape,area,houseage,price,type,img,creattime,description ) values(#{topic},#{userid},#{position},#{posidetail},#{shape},#{area},#{houseage},#{price},#{type},#{img},#{creattime},#{description})")
+	public void insert(House h);
+
 	@Delete("delete from hms_house where userid=#{userid} and id=#{houseid}")
 	public void delete(@Param("houseid") int houseid, @Param("userid") int userid);
 

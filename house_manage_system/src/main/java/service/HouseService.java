@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import model.House;
-import utils.ReturnInfo;
+//import utils.ReturnInfo;
 
 public interface HouseService {
 

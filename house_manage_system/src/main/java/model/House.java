@@ -6,10 +6,10 @@ public class House {
 	private String topic;  //标题
 	private String position;  //地区
 	private String posidetail;  //详细地址
-	private String shape;  //房型
-	private Integer area;  //面积
+	private Integer shape;  //房型
+	private Double area;  //面积
 	private Integer houseage;  //房龄
-	private Double price;  //总价
+	private Integer price;  //总价
 	private String img;  //图片
 	private String creattime;  //发布时间
 	private String description;  //描述
@@ -46,16 +46,16 @@ public class House {
 	public void setPosition(String position) {
 		this.position = position;
 	}
-	public String getShape() {
+	public Integer getShape() {
 		return shape;
 	}
-	public void setShape(String shape) {
+	public void setShape(Integer shape) {
 		this.shape = shape;
 	}
-	public Integer getArea() {
+	public Double getArea() {
 		return area;
 	}
-	public void setArea(Integer area) {
+	public void setArea(Double area) {
 		this.area = area;
 	}
 	public Integer getHouseage() {
@@ -64,10 +64,10 @@ public class House {
 	public void setHouseage(Integer houseage) {
 		this.houseage = houseage;
 	}
-	public Double getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(Double price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 	public String getImg() {

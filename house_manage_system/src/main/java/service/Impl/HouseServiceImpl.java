@@ -15,13 +15,12 @@ public class HouseServiceImpl implements HouseService {
 	HouseDao dao;
 
 	public List<House> select(String txt, Integer page, Integer limit) {
-
 		return dao.select(txt, null);
 	}
 
 	public House selectById(Integer id) {
 		House house = dao.selectById(id);
-		house.setUnitPrice((int) (house.getPrice() * 10000 / house.getArea()));
+//		house.setUnitPrice((int) (house.getPrice() * 10000 / house.getArea()));
 		return house;
 	}
 

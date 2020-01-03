@@ -38,10 +38,10 @@
 			${house.posidetail}</span>
 	</div>
 	<div style="margin-left: 80px; float: left; height: 380px; width: 50%">
-		<img src="${house.img}" style="height: 380px; width: 100%">
+		<img src="../images/${house.img}" style="height: 380px; width: 100%">
 	</div>
 	<div style="float: left; margin-left: 40px; width: 30%">
-		<b style="color: red; font-size: 50px">${house.price}</b> <span
+		<b style="color: red; font-size: 50px">${house.price/10000}</b> <span
 			style="color: red;">万</span> <b style="margin-left: 30px;">${house.unitPrice}元/平米</b>
 		<hr>
 		<div style="padding-top: 10px; padding-bottom: 10px">
@@ -51,7 +51,10 @@
 		</div>
 		<div class="detail">
 			<div>
-				<span style="color: #9199AA">详细地址 </span><span>${house.posidetail} <span></span>
+
+				<span style="color: #9199AA">详细地址 </span> <span><a
+					href="../map.jsp?position=山东省青岛市${house.position}${house.posidetail}"
+					target="_blank">${house.posidetail}(点击查看地图)</a> </span>
 			</div>
 			<div>
 				<span style="color: #9199AA">所在区域 </span> <span>${house.position}</span>
@@ -64,40 +67,54 @@
 		<div>
 			<h1 style="font-size: 27px">房主： ${house.name}</h1>
 			<div
-				style=" margin-top:20px;padding-left:10px; height: 30px; width: 80%; background-color: rgb(48, 114, 246);color: white;border-radius: 5px;">
+				style="margin-top: 20px; padding-left: 10px; height: 30px; width: 80%; background-color: rgb(48, 114, 246); color: white; border-radius: 5px;">
 				<span style="font-size: 20px">电话:${house.tel}</span>
 			</div>
 			<div
-				style="margin-top:10px;padding-left:10px;  margin-top: 5px; height: 30px; width: 80%; background-color:rgb(48, 114, 246);color: white;border-radius: 5px;">
+				style="margin-top: 10px; padding-left: 10px; margin-top: 5px; height: 30px; width: 80%; background-color: rgb(48, 114, 246); color: white; border-radius: 5px;">
 				<span style="font-size: 20px">邮箱:${house.email}</span>
 			</div>
 
 		</div>
 	</div>
 	<div>
-		<input style="border-radius: 5px; height: 30px; width: 6.3%; background-color: rgb(48, 114, 246);color: white; float: right;"  onclick="collect()" type="button" value="点击收藏">
+		<input
+			style="border-radius: 5px; height: 30px; width: 6.3%; background-color: rgb(48, 114, 246); color: white; float: right;"
+			onclick="collect()" type="button" value="点击收藏">
 	</div>
 	<div
 		style="height: 40px; width: 100%; background-color: rgb(245, 245, 245); clear: both"></div>
 
-<script type="text/javascript">
-function collect(){
-	 var houseid=${house.id}
-	$.ajax({
-	  	  type: 'POST',
-	  	  url: "../collection/insert.do?houseid="+houseid,
-	  	  data: JSON.stringify({
-	  	    
-	  	  }),
-	  	  contentType:'application/json',
-	  	  success: function(data){
-	  		layer.msg('收藏成功',{icon: 1});
-	  	  },
-	  	  dataType: "json",
-	  	}); 
-	}
-
-</script>
+	<script type="text/javascript">
+		function collect() {
+			var houseid = $
+			{
+				house.id
+			}
+			;
+			var position = "山东省青岛市" + $
+			{
+				house.position
+			}
+			+$
+			{
+				house.posidetail
+			}
+			;
+			$.ajax({
+				type : 'POST',
+				url : "../collection/insert.do?houseid=" + houseid,
+				data : JSON.stringify({}),
+				contentType : 'application/json',
+				success : function(data) {
+					layer.msg('收藏成功', {
+						icon : 1
+					});
+				},
+				dataType : "json",
+			});
+		}
+	</script>
 
 </body>
 </html>

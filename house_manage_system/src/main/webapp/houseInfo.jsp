@@ -44,7 +44,7 @@
   			  +"<h2 style='margin-bottom: 20px;'>"+data[i].topic+"</h2>"
   			  +"<p style='float: right; color: red; font-size: 20px;'>"+(data[i].price/10000)+"万元</p>"
   			  +"<b style='display: block; margin-bottom: 20px;'>类型："+data[i].typeName+"</b>"
-  			  +"<span>"+data[i].position+"</span> <span>"+data[i].area+"平方米</span> <span>"+data[i].houseage+"室</span> <br>"
+  			  +"<span>"+data[i].position+"</span> <span>"+data[i].area+"平方米</span> <span>"+data[i].houseage+"室</span> <span>"+data[i].houseage+"年</span><br>"
   			  +"<div style='height: 20px;'></div>"
   			  +"<span>"+data[i].creattime+"发布<span>"
   			  +"<a style='float: right;' target='_parent _blank' href='house/detail.do?id="+id+"'>查看详情</a>"

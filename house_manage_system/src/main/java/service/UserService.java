@@ -10,12 +10,12 @@ import org.apache.ibatis.annotations.Update;
 
 import model.User;
 import model.User;
-import utils.ReturnInfo;
+//import utils.ReturnInfo;
 
 public interface UserService {
 
 	// 查询
-	public ReturnInfo selectUser(String where, Integer page ,Integer count);
+//	public ReturnInfo selectUser(String where, Integer page ,Integer count);
 	//通过id查询
 	public User selectById(Integer id);
 	// 新增

@@ -35,6 +35,7 @@ public class CollectionController {
 	@RequestMapping("insert")
 	public @ResponseBody ReturnJson insert(int houseid, HttpSession session) {
 		int userid = ((User) session.getAttribute("user")).getId();
+		System.out.println(userid+"--"+houseid);
 		service.insert(houseid, userid);
 		return new ReturnJson();
 	}

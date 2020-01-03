@@ -10,21 +10,21 @@ import org.springframework.stereotype.Service;
 import dao.UserDao;
 import model.User;
 import service.UserService;
-import utils.ReturnInfo;
+//import utils.ReturnInfo;
 
 @Service
 public class UserServiceImpl implements UserService{
 	@Autowired
 	UserDao dao;
 	
-	// 查询全部
-	public ReturnInfo selectUser(String where, Integer page, Integer count) {
-		boolean canpage=page!=null;
-		ReturnInfo info = new ReturnInfo();
-		info.setList(dao.selectUser(where,ReturnInfo.getLimit(page, count)));
-		if(canpage)info.setCount(dao.selectUserCount(where));
-		return info;
-	}
+//	// 查询全部
+//	public ReturnInfo selectUser(String where, Integer page, Integer count) {
+//		boolean canpage=page!=null;
+//		ReturnInfo info = new ReturnInfo();
+//		info.setList(dao.selectUser(where,ReturnInfo.getLimit(page, count)));
+//		if(canpage)info.setCount(dao.selectUserCount(where));
+//		return info;
+//	}
 
 	// 查询一个
 	public User selectById(Integer id) {
