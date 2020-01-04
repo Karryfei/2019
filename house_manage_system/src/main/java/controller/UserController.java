@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import model.User;
 import service.UserService;
 import utils.ImageVerificationCode;
-//import utils.ReturnInfo;
-//import utils.ReturnJson;
 
 @Controller
 @RequestMapping("user")
@@ -34,10 +32,11 @@ public class UserController {
 		System.out.println(num);
 		User user = service.login(u);
 		System.out.println(num + "--" + u.getPassword() + "--" + u.getTel());
+		System.out.println(user.getName());
 		if (num.equalsIgnoreCase(code) && user != null) {
 			s.setAttribute("user", user);
 			s.setMaxInactiveInterval(100000);
-			return "redirect:/index.html";
+			return "redirect:/login_success.jsp";
 		} else {
 			return "redirect:/login.html";
 		}
@@ -48,7 +47,14 @@ public class UserController {
 	public String register(User u) {
 		System.out.println(u.getName() + "--" + u.getPassword() + "--" + u.getSex() + "--" + u.getTel() + "--"
 				+ u.getEmail() + "--" + u.getAddress() + "--");
-		service.insert(u);
+		User user=service.selectBTel(u.getTel());
+		if(user==null){
+			service.insert(u);
+			return "redirect:/login.html";
+		}else{
+			
+		}
+		
 		return "redirect:/login.html";
 
 	}
@@ -57,7 +63,7 @@ public class UserController {
 	@RequestMapping("outlogin")
 	public String login(HttpSession s) {
 		s.removeAttribute("user");
-		return "redirect:/login.html";
+		return "redirect:/new_index.jsp";
 	}
 
 	// 查询全部

@@ -1,6 +1,7 @@
 package controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class HouseController {
 		String txt = null;
 		if (!(hs.getType() == null)) {
 			txt = " where hms_house.type = " + hs.getType();
+			System.out.println(txt);
 		}
 		return service.select(txt, page, limit);
 	}
@@ -54,6 +56,7 @@ public class HouseController {
 				}
 			}
 		}
+		System.out.println(txt);
 
 		m.addAttribute("findSize", service.findHouse(txt).size());
 		m.addAttribute("findInfo", service.findHouse(txt));

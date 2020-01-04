@@ -45,7 +45,7 @@
 			style="color: red;">万</span> <b style="margin-left: 30px;">${house.unitPrice}元/平米</b>
 		<hr>
 		<div style="padding-top: 10px; padding-bottom: 10px">
-			<b style="font-size: 25px">${house.shape}室</b> <b
+			<b style="font-size: 25px">${house.layout}</b> <b
 				style="font-size: 25px; margin-left: 80px">${house.area}平方米</b>
 			<hr>
 		</div>
@@ -87,24 +87,12 @@
 
 	<script type="text/javascript">
 		function collect() {
-			var houseid = $
-			{
-				house.id
-			}
-			;
-			var position = "山东省青岛市" + $
-			{
-				house.position
-			}
-			+$
-			{
-				house.posidetail
-			}
-			;
+			var houseid = ${house.id};
 			$.ajax({
 				type : 'POST',
 				url : "../collection/insert.do?houseid=" + houseid,
-				data : JSON.stringify({}),
+				data : JSON.stringify({
+				}),
 				contentType : 'application/json',
 				success : function(data) {
 					layer.msg('收藏成功', {

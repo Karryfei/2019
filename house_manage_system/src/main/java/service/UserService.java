@@ -16,8 +16,13 @@ public interface UserService {
 
 	// 查询
 //	public ReturnInfo selectUser(String where, Integer page ,Integer count);
+	
 	//通过id查询
 	public User selectById(Integer id);
+	
+	//通过tel查询
+	public User selectBTel(String tel);
+	
 	// 新增
 	public void insert(User u);
 

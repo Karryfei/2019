@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 <script src="js/jquery-2.2.4.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+
 </head>
 <body>
 <h1>共找到<span id="count"></span>套 青岛二手房</h1>
@@ -39,12 +41,12 @@
   	  success: function(data){
   		  for(var i=0;i<data.length;i++){
   			  var id=data[i].id;
-  			  var item="<li><div  style='display: inline-block; width: 23%; height: 150px;'><img style='height: 150px; width: 230px;' src='images/"+data[i].img+"'></div>"
-  			  +"<div style='display: inline-block; width: 76%;'>"
+  			  var item="<li><div  style='display: inline-block; width: 30%; height: 150px;'><img style='height: 180px; width: 300px;' src='images/"+data[i].img+"'></div>"
+  			  +"<div style='display: inline-block; width: 70%;'>"
   			  +"<h2 style='margin-bottom: 20px;'>"+data[i].topic+"</h2>"
   			  +"<p style='float: right; color: red; font-size: 20px;'>"+(data[i].price/10000)+"万元</p>"
   			  +"<b style='display: block; margin-bottom: 20px;'>类型："+data[i].typeName+"</b>"
-  			  +"<span>"+data[i].position+"</span> <span>"+data[i].area+"平方米</span> <span>"+data[i].houseage+"室</span> <span>"+data[i].houseage+"年</span><br>"
+  			  +"<span>"+data[i].position+" |</span> <span>"+data[i].area+"平方米 |</span> <span>"+data[i].layout+" |</span> <span>"+data[i].houseage+"年 |</span><br>"
   			  +"<div style='height: 20px;'></div>"
   			  +"<span>"+data[i].creattime+"发布<span>"
   			  +"<a style='float: right;' target='_parent _blank' href='house/detail.do?id="+id+"'>查看详情</a>"

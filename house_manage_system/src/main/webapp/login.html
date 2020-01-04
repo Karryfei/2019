@@ -28,17 +28,9 @@
 <script src="js/jquery-2.2.4.min.js"></script>
 </head>
 <body>
-	<script>
-		$(document).ready(function(c) {
-			$('.close').on('click', function(c) {
-				$('.login-form').fadeOut('slow', function(c) {
-					$('.login-form').remove();
-				});
-			});
-		});
-	</script>
+	
 	<!--SIGN UP-->
-	<h1>买二手房选青大</h1>
+
 	<div class="login-form">
 		<div class="close"></div>
 		<div class="head-info">
@@ -62,7 +54,7 @@
 	</div>
 	<script>
 		$("#code").click(function() {
-			$(this)[0].src = 'img?' + Math.random()
+			$(this)[0].src = 'user/getVerifiCode.do?' + Math.random()
 		});
 	</script>
 </body>

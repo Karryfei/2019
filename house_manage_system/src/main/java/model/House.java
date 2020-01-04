@@ -6,7 +6,8 @@ public class House {
 	private String topic;  //标题
 	private String position;  //地区
 	private String posidetail;  //详细地址
-	private Integer shape;  //房型
+	private Integer shape;  //几室
+	private String layout;  //房型(2室1厅)
 	private Double area;  //面积
 	private Integer houseage;  //房龄
 	private Integer price;  //总价
@@ -123,6 +124,12 @@ public class House {
 	}
 	public void setUnitPrice(Integer unitPrice) {
 		this.unitPrice = unitPrice;
+	}
+	public String getLayout() {
+		return layout;
+	}
+	public void setLayout(String layout) {
+		this.layout = layout;
 	}
 	
 }

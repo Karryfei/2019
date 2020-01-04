@@ -31,6 +31,10 @@ public class UserServiceImpl implements UserService{
 		return dao.selectById(id);
 	}
 	
+	public User selectBTel(String tel) {
+		return dao.selectByTel(tel);
+	}
+	
 	// 新增
 	public void insert(User u) {
 //		SimpleDateFormat sdf = new SimpleDateFormat();// 格式化时间

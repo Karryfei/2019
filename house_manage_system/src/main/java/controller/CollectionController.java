@@ -26,6 +26,7 @@ public class CollectionController {
 	@RequestMapping("select")
 	public  String select(HttpSession session,ModelMap m) {
 		int userid = ((User) session.getAttribute("user")).getId();
+		System.out.println(userid);
 		m.put("house", service.select(userid));
 		m.put("collectionSize", service.select(userid).size());
 		return "collectionHouseInfo";

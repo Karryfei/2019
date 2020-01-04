@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<!-- <link rel="stylesheet" href="css/style2.css" /> -->
 <link rel="stylesheet"
 	href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
@@ -37,12 +37,12 @@
 						<li><a href="login.html">别墅</a></li>
 						<li><a href="login.html">商业办公</a></li>
 					</ul>
-					<form class="navbar-form navbar-left" role="search">
+					<!-- <form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
 							<input type="text" class="form-control" />
 						</div>
 						<button type="submit" class="btn btn-default">搜索</button>
-					</form>
+					</form> -->
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="login.html">登录</a></li>
 						<li><a id="modal-686965" href="#modal-container-686965"
@@ -86,7 +86,7 @@
 										<label for="inputSex" class="col-sm-2 control-label">性别</label>
 										<div class="col-sm-10">
 											<input name="sex" type="radio" value="0" checked="checked" />男
-											<input name="sex" type="radio" value="1"/>女
+											<input name="sex" type="radio" value="1" />女
 										</div>
 									</div>
 									<div class="form-group">
@@ -108,6 +108,25 @@
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="inputAddress"
 												name="address" style="width: 300px" />
+										
+												省份选择
+												<select id="prov" onchange="showCity(this)">
+													<option>=请选择省份=</option>
+
+												</select>
+
+												城市选择
+												<select id="city" onchange="showCountry(this)">
+													<option>=请选择城市=</option>
+												</select>
+
+												县区选择
+												<select id="country" onchange="selecCountry(this)">
+													<option>=请选择县区=</option>
+												</select>
+												<button type="button" class="btn met1" onClick="showAddr()"
+													id="button-show">确定</button>
+										
 										</div>
 									</div>
 
@@ -212,4 +231,7 @@
 
 		</div>
 	</div>
+
+	<script src="js/city.js"></script>
+	<script src="js/method.js"></script>
 </body>

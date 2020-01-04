@@ -36,6 +36,10 @@ public interface UserDao {
 	// ͨ根据id查询
 	@Select("select * from hms_user where id=#{id}")
 	public User selectById(Integer id);
+	
+	//通过tel查询
+	@Select("select * from hms_user where tel=#{tel}")
+	public User selectByTel(String tel);
 
 	// 登录
 	@Select("select * from hms_user where tel=#{tel} and password=#{password}")
