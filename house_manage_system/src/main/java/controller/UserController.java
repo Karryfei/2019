@@ -32,7 +32,6 @@ public class UserController {
 		System.out.println(num);
 		User user = service.login(u);
 		System.out.println(num + "--" + u.getPassword() + "--" + u.getTel());
-//		System.out.println(user.getName());
 		if (num.equalsIgnoreCase(code) && user != null) {
 			s.setAttribute("user", user);
 			s.setMaxInactiveInterval(100000);
@@ -46,7 +45,7 @@ public class UserController {
 	@RequestMapping("register")
 	public String register(User u) {
 		System.out.println(u.getName() + "--" + u.getPassword() + "--" + u.getSex() + "--" + u.getTel() + "--"
-				+ u.getEmail() + "--" + u.getAddress() + "--");
+				+ u.getEmail() + "--");
 		User user=service.selectBTel(u.getTel());
 		if(user==null){
 			System.out.println("用户不存在");
@@ -64,15 +63,7 @@ public class UserController {
 		return "redirect:/new_index.jsp";
 	}
 
-	// 查询全部
-	// @RequestMapping("select")
-	// public @ResponseBody ReturnInfo select(String txt,Integer page,Integer
-	// limit) {
-	// if(txt!=null&&txt.length()>0)txt=" where hms_user.name like '%"+txt+"%'
-	// ";
-	// else txt="";
-	// return service.selectUser(txt, page, limit);
-	// }
+
 	// 插入
 	@RequestMapping("insert")
 	public String insert(User u) {
@@ -86,23 +77,11 @@ public class UserController {
 		return service.selectById(id);
 	}
 
-	// 更新
-	// @RequestMapping("update")
-	// public @ResponseBody ReturnJson update(User b){
-	// service.update(b);
-	// return new ReturnJson();
-	// }
 	// 获取性别
 	@RequestMapping("getsexs")
 	public @ResponseBody String[] getSexs() {
 		return User.sexs;
 	}
-	// 删除
-	// @RequestMapping("delete")
-	// public @ResponseBody ReturnJson delete(int id) {
-	// service.delete(id);
-	// return new ReturnJson();
-	// }
 
 	// 获取验证码图片
 	@RequestMapping("getVerifiCode")

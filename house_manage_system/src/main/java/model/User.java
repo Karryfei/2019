@@ -8,10 +8,6 @@ public class User{
 	private Integer sex;
 	private String tel;
 	private String email;
-	private String address;
-	private String province; //省
-	private String city;  //市
-	private String county;  //县、区
 	public static String[] sexs= {"男","女"};
 	public String getSexName(){
 		return sexs[sex];
@@ -57,30 +53,6 @@ public class User{
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getProvince() {
-		return province;
-	}
-	public void setProvince(String province) {
-		this.province = province;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getCounty() {
-		return county;
-	}
-	public void setCounty(String county) {
-		this.county = county;
 	}
 	
 }

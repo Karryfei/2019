@@ -26,11 +26,6 @@ public interface UserService {
 	// 新增
 	public void insert(User u);
 
-	// 修改
-	public void update(User u);
-
-	// 删除
-	public void delete(Integer id);
 	//登录
 	public User login(User u);
 	

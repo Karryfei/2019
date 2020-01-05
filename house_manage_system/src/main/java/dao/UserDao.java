@@ -14,10 +14,6 @@ import model.User;
 @Repository
 public interface UserDao {
 
-	// 查询数量
-	@Select("select count(1) from hms_user ${where}")
-	public Integer selectUserCount(@Param("where") String where);
-
 	@Select("select * from hms_user ${where} ${limit}")
 	public List<User> selectUser(@Param("where") String where, @Param("limit") String limit);
 
