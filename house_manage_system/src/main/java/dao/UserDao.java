@@ -22,7 +22,7 @@ public interface UserDao {
 	public List<User> selectUser(@Param("where") String where, @Param("limit") String limit);
 
 	// 插入
-	@Insert("insert into hms_user (name,password,sex,tel,email,address) values(#{name},#{password},#{sex},#{tel},#{email},#{address})")
+	@Insert("insert into hms_user (name,password,sex,tel,email) values(#{name},#{password},#{sex},#{tel},#{email})")
 	public void insert(User u);
 
 	// 更新

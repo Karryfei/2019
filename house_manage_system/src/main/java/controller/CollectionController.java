@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import model.Cllection;
 import model.House;
 import model.User;
 import service.CollectionService;
@@ -37,7 +38,11 @@ public class CollectionController {
 	public @ResponseBody ReturnJson insert(int houseid, HttpSession session) {
 		int userid = ((User) session.getAttribute("user")).getId();
 		System.out.println(userid+"--"+houseid);
-		service.insert(houseid, userid);
+		Cllection cllection=service.selectByHidAndUid(userid, houseid);
+		if(cllection==null){
+			System.out.println(userid+"--"+houseid);
+			service.insert(houseid, userid);
+		}
 		return new ReturnJson();
 	}
 

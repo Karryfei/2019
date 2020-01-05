@@ -17,6 +17,26 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 @Controller
 public class ImgUpController {
 
+//	@RequestMapping("imgup")
+//	public  @ResponseBody String imgUp(@RequestParam("file") CommonsMultipartFile file,HttpServletRequest req )throws Exception {
+////		String newname=null;
+//		String oname=file.getOriginalFilename(); //上传的文件名
+////		String ex=oname.substring(oname.lastIndexOf("."),oname.length());
+////		String nname = UUID.randomUUID()+ex;
+//		
+//		System.out.println("oname=="+oname);
+////		System.out.println("ex=="+ex);
+////		System.out.println("nname=="+nname);
+//  
+//		String path=req.getSession().getServletContext().getRealPath("/");//获取的是Servlet容器对象，相当于tomcat容器了。getRealPath("/") 获取实际路径，“/”指代项目根目录，所以代码返回的是项目在容器中的实际发布运行的根路径
+//		String path2=path+"images/";
+//		System.out.println(path);
+//		System.out.println(path2);
+//		file.transferTo(new File(path2,oname));
+////		newname="/upload/"+nname;
+//		return "/upload/"+oname;
+//	}
+	
 	@RequestMapping("imgup")
 	public  @ResponseBody String imgUp(@RequestParam("file") CommonsMultipartFile file,HttpServletRequest req )throws Exception {
 		String newname=null;
@@ -24,12 +44,14 @@ public class ImgUpController {
 		String ex=oname.substring(oname.lastIndexOf("."),oname.length());
 		String nname = UUID.randomUUID()+ex;
   
-		String path=req.getSession().getServletContext().getRealPath("/");
-		path=new File(path).getParentFile().getPath()+"/upload";
-		System.out.println(path);
-		file.transferTo(new File(path,nname));
-		newname="/upload/"+nname;
-		return "/upload/"+nname;
+		String path=req.getSession().getServletContext().getRealPath("/")+"images";
+//		path=new File(path).getParentFile().getPath()+"/images";
+		System.out.println(path+"");
+		System.out.println(req.getSession().getServletContext().getContextPath());
+		System.out.println(new File("").getCanonicalPath());
+		System.out.println(this.getClass().getClassLoader().getResource(""));
+		file.transferTo(new File(path));
+		return "/images/"+nname;
 	}
 	
 	}

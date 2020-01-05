@@ -45,8 +45,7 @@
 					</form> -->
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="login.html">登录</a></li>
-						<li><a id="modal-686965" href="#modal-container-686965"
-							role="button" class="btn" data-toggle="modal">注册</a></li>
+						<li><a href="register.html">注册</a></li>
 					</ul>
 				</div>
 				</nav>
@@ -54,7 +53,7 @@
 
 
 
-				<div class="modal fade" id="modal-container-686965" role="dialog"
+				<!-- <div class="modal fade" id="modal-container-686965" role="dialog"
 					aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -108,25 +107,6 @@
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="inputAddress"
 												name="address" style="width: 300px" />
-										
-												省份选择
-												<select id="prov" onchange="showCity(this)">
-													<option>=请选择省份=</option>
-
-												</select>
-
-												城市选择
-												<select id="city" onchange="showCountry(this)">
-													<option>=请选择城市=</option>
-												</select>
-
-												县区选择
-												<select id="country" onchange="selecCountry(this)">
-													<option>=请选择县区=</option>
-												</select>
-												<button type="button" class="btn met1" onClick="showAddr()"
-													id="button-show">确定</button>
-										
 										</div>
 									</div>
 
@@ -141,7 +121,7 @@
 
 					</div>
 
-				</div>
+				</div> -->
 
 
 

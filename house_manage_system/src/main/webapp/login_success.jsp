@@ -41,7 +41,9 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><h4>${sessionScope.user.name},欢迎登录！</h4></li>
-						<li><a href="post.html">发布</a></li>
+						<li><a href="collection/select.do">我的收藏</a></li>
+						<li><a href="house/selectByUserid.do">我的发布</a></li>
+						<li><a href="post.html">免费发布</a></li>
 						<li><a href="user/outlogin.do">退出</a></li>
 					</ul>
 				</div>

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-<script src="../js/jquery-2.2.4.min.js"></script>
+<script src="js/jquery-2.2.4.min.js"></script>
 <link href="../layui/css/layui.css" rel="stylesheet">
 <script type="text/javascript" src="../layui/layui.all.js"></script>
 <style type="text/css">
@@ -14,22 +14,53 @@
 	margin: 20px;
 }
 </style>
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet"
+	href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="//cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="layui/layui.all.js"></script>
 
 </head>
 <body>
 	<div style="height: 160px; background-color: rgb(245, 245, 245);">
+		<div style="height: 70px; margin-left: 80px">
+			<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span><span
+						class="icon-bar"></span><span class="icon-bar"></span><span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="houseInfo.jsp" target="houseInfo">首页</a>
+			</div>
 
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="houseInfo.jsp?type=0"
+						target="houseInfo">公寓</a></li>
+					<li><a href="houseInfo.jsp?type=1" target="houseInfo">住宅</a></li>
+					<li><a href="houseInfo.jsp?type=2" target="houseInfo">工业厂房</a></li>
+					<li><a href="houseInfo.jsp?type=3" target="houseInfo">别墅</a></li>
+					<li><a href="houseInfo.jsp?type=4" target="houseInfo">商业办公</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><h4>${sessionScope.user.name},欢迎登录！</h4></li>
+					<li><a href="collection/select.do">我的收藏</a></li>
+					<li><a href="house/selectByUserid.do">我的发布</a></li>
+					<li><a href="../post.html">免费发布</a></li>
+					<li><a href="user/outlogin.do">退出</a></li>
+				</ul>
+			</div>
+			</nav>
+			<div>
+				<h1 style="margin-top: 0">${house.topic}</h1>
 
-		<div style="height: 70px;">
-			<img style="float: left; margin: 5px;" src="../images/house.png">
-			<h1
-				style="float: left; display: inline-block; margin: 0; color: #6756EA;">青大找房</h1>
-			<h3
-				style="float: left; display: inline-block; margin-top: 10px; margin-left: 30px; color: #6756EA;">房子详情</h3>
-		</div>
-		<div style="height: 80px; margin-left: 80px">
-			<h1 style="margin-top: 0">${house.topic}</h1>
-			<span style="color: #9199AA">${house.description}</span>
+				<span style="color: #9199AA">${house.description}</span>
+			</div>
 		</div>
 	</div>
 
@@ -87,12 +118,15 @@
 
 	<script type="text/javascript">
 		function collect() {
-			var houseid = ${house.id};
+			var houseid = $
+			{
+				house.id
+			}
+			;
 			$.ajax({
 				type : 'POST',
 				url : "../collection/insert.do?houseid=" + houseid,
-				data : JSON.stringify({
-				}),
+				data : JSON.stringify({}),
 				contentType : 'application/json',
 				success : function(data) {
 					layer.msg('收藏成功', {

@@ -81,6 +81,7 @@ public class HouseController {
 		h.setImg(files);
 		User user = (User) s.getAttribute("user");
 		h.setUserid(user.getId());
+		System.out.println(h.getImg()+"--"+h.getName()+"--"+h.getTopic()+"--"+h.getArea());
 		service.insert(h);
 		return "redirect:/index.html";
 	}

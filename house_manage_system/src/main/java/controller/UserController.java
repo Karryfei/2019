@@ -32,7 +32,7 @@ public class UserController {
 		System.out.println(num);
 		User user = service.login(u);
 		System.out.println(num + "--" + u.getPassword() + "--" + u.getTel());
-		System.out.println(user.getName());
+//		System.out.println(user.getName());
 		if (num.equalsIgnoreCase(code) && user != null) {
 			s.setAttribute("user", user);
 			s.setMaxInactiveInterval(100000);
@@ -49,14 +49,12 @@ public class UserController {
 				+ u.getEmail() + "--" + u.getAddress() + "--");
 		User user=service.selectBTel(u.getTel());
 		if(user==null){
+			System.out.println("用户不存在");
 			service.insert(u);
 			return "redirect:/login.html";
 		}else{
-			
+			return "redirect:/login_fail.jsp";
 		}
-		
-		return "redirect:/login.html";
-
 	}
 
 	// 退出登陆
