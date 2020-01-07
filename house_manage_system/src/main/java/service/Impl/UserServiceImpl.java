@@ -3,6 +3,7 @@ package service.Impl;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,5 +36,12 @@ public class UserServiceImpl implements UserService{
 	public User login(User u) {
 		return dao.login(u);
 	}
-
+	
+	public List<User> selectAll(){
+		return dao.selectUser(null, null);
+	}
+	
+	public void deleteById(Integer id){
+		dao.delete(id);
+	}
 }

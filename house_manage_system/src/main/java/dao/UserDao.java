@@ -16,7 +16,7 @@ public interface UserDao {
 
 	@Select("select * from hms_user ${where} ${limit}")
 	public List<User> selectUser(@Param("where") String where, @Param("limit") String limit);
-
+	
 	// 插入
 	@Insert("insert into hms_user (name,password,sex,tel,email) values(#{name},#{password},#{sex},#{tel},#{email})")
 	public void insert(User u);

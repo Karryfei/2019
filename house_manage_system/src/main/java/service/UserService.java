@@ -29,4 +29,8 @@ public interface UserService {
 	//登录
 	public User login(User u);
 	
+
+	public List<User> selectAll();
+	
+	public void deleteById(Integer id);
 }

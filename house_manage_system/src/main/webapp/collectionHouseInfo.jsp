@@ -9,18 +9,51 @@
 <script src="../js/jquery-2.2.4.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/index.css" />
 
+
+<link rel="stylesheet"
+	href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="//cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="layui/layui.all.js"></script>
+
 </head>
 <body>
+
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span><span
+					class="icon-bar"></span><span class="icon-bar"></span><span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../houseInfo.jsp" target="houseInfo">首页</a>
+		</div>
+	
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><h4>${sessionScope.user.name},欢迎登录！</h4></li>
+				<li><a href="../collection/select.do">我的收藏</a></li>
+				<li><a href="../house/selectByUserid.do">我的发布</a></li>
+				<li><a href="../post.html">免费发布</a></li>
+				<li><a href="../user/outlogin.do">退出</a></li>
+			</ul>
+		</div>
+	</nav>
+	
 <div style="height: 90px; background-color: rgb(245, 245, 245);">
 
-		<div style="height: 70px;">
+	<div style="height: 70px;">
 			<img style="float: left; margin: 5px;" src="../images/house.png">
 			<h1
 				style="float: left; display: inline-block; margin: 0; color: #6756EA;">青大找房</h1>
 			<h3
 				style="float: left; display: inline-block; margin-top: 10px; margin-left: 30px; color: #6756EA;">我的收藏</h3>
-		</div>
-		<c:if test="${collectionSize==0}">
+	</div>
+	
+	<c:if test="${collectionSize==0}">
 		
 		<div
 			style="background-image: url(../images/sorry.gif); height: 600px; width: 60%; background-size: cover;">
@@ -28,6 +61,7 @@
 		</div>
 
 	</c:if>
+	
 	<ul class="ul" style="list-style: none;">
 		<c:forEach items="${house}" var="house" varStatus="status">
 			<li>

@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -59,8 +61,13 @@ public class UserController {
 	// 退出登陆
 	@RequestMapping("outlogin")
 	public String login(HttpSession s) {
+		User u = (User)s.getAttribute("user");
+		String ret = "redirect:/new_index.jsp";
+		if (u != null && u.getId() == 1) {
+			ret = "redirect:/admin_login.html";
+		}
 		s.removeAttribute("user");
-		return "redirect:/new_index.jsp";
+		return ret;
 	}
 
 
@@ -94,5 +101,34 @@ public class UserController {
 		BufferedImage image = ivc.getImage(); // 获取验证码
 		request.getSession().setAttribute("number", ivc.getText()); // 将验证码的文本存在session中
 		ivc.output(image, response.getOutputStream());// 将验证码图片响应给客户端
+	}
+	
+	@RequestMapping("admin")
+	public String ad_login(User u, HttpSession s, ModelMap m) {
+		System.out.println("--" + u.getPassword() + "--" + u.getTel());
+		User user = service.login(u);
+		if (user != null && user.getId() == 1) {
+			s.setAttribute("user", user);
+			s.setMaxInactiveInterval(100000);
+			s.setAttribute("individuals", service.selectAll());
+			return "redirect:/manage_user.jsp";
+		} else {
+			return "redirect:/admin_login.html";
+		}
+	}
+	
+	@RequestMapping("select")
+	public String selectAllUser(HttpSession s) {
+		System.out.println(service.selectAll().size());
+		s.setAttribute("individuals", service.selectAll());
+		return "redirect:/manage_user.jsp";
+	}
+	
+	@RequestMapping("delete")
+	public String deleteUserById(int id, HttpSession s) {
+		service.deleteById(id);
+		System.out.println(service.selectAll().size());
+		s.setAttribute("individuals", service.selectAll());
+		return "redirect:/manage_user.jsp";
 	}
 }

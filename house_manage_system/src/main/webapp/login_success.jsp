@@ -19,34 +19,34 @@
 		<div class="row clearfix">
 			<div class="col-md-12 column">
 				<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span><span
-							class="icon-bar"></span><span class="icon-bar"></span><span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="houseInfo.jsp" target="houseInfo">首页</a>
-				</div>
-
-				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="houseInfo.jsp?type=0"
-							target="houseInfo">公寓</a></li>
-						<li><a href="houseInfo.jsp?type=1" target="houseInfo">住宅</a></li>
-						<li><a href="houseInfo.jsp?type=2" target="houseInfo">工业厂房</a></li>
-						<li><a href="houseInfo.jsp?type=3" target="houseInfo">别墅</a></li>
-						<li><a href="houseInfo.jsp?type=4" target="houseInfo">商业办公</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><h4>${sessionScope.user.name},欢迎登录！</h4></li>
-						<li><a href="collection/select.do">我的收藏</a></li>
-						<li><a href="house/selectByUserid.do">我的发布</a></li>
-						<li><a href="post.html">免费发布</a></li>
-						<li><a href="user/outlogin.do">退出</a></li>
-					</ul>
-				</div>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span><span
+								class="icon-bar"></span><span class="icon-bar"></span><span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="houseInfo.jsp" target="houseInfo">首页</a>
+					</div>
+	
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="houseInfo.jsp?type=0"
+								target="houseInfo">公寓</a></li>
+							<li><a href="houseInfo.jsp?type=1" target="houseInfo">住宅</a></li>
+							<li><a href="houseInfo.jsp?type=2" target="houseInfo">工业厂房</a></li>
+							<li><a href="houseInfo.jsp?type=3" target="houseInfo">别墅</a></li>
+							<li><a href="houseInfo.jsp?type=4" target="houseInfo">商业办公</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><h4>${sessionScope.user.name},欢迎登录！</h4></li>
+							<li><a href="collection/select.do">我的收藏</a></li>
+							<li><a href="house/selectByUserid.do">我的发布</a></li>
+							<li><a href="post.html">免费发布</a></li>
+							<li><a href="user/outlogin.do">退出</a></li>
+						</ul>
+					</div>
 				</nav>
 
 				<div>
