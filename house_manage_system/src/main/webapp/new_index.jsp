@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>首页</title>
 <!-- <link rel="stylesheet" href="css/style2.css" /> -->
 <link rel="stylesheet"
 	href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,81 +50,6 @@
 				</div>
 				</nav>
 
-
-
-
-				<!-- <div class="modal fade" id="modal-container-686965" role="dialog"
-					aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"
-									aria-hidden="true">×</button>
-								<h4 class="modal-title" id="myModalLabel">注册</h4>
-							</div>
-							<div class="modal-body">
-								<form class="form-horizontal" role="form"
-									action="user/register.do" method="post">
-
-									<div class="form-group">
-										<label for="inputUsername" class="col-sm-2 control-label">用户名</label>
-										<div class="col-sm-10">
-											<input type="text" class="form-control" id="inputUsername"
-												name="name" style="width: 300px" />
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="inputPassword" class="col-sm-2 control-label">密码</label>
-										<div class="col-sm-10">
-											<input type="password" class="form-control"
-												id="inputPassword" name="password" style="width: 300px" />
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label for="inputSex" class="col-sm-2 control-label">性别</label>
-										<div class="col-sm-10">
-											<input name="sex" type="radio" value="0" checked="checked" />男
-											<input name="sex" type="radio" value="1" />女
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="inputTel" class="col-sm-2 control-label">手机号</label>
-										<div class="col-sm-10">
-											<input type="text" class="form-control" id="inputTel"
-												name="tel" style="width: 300px" />
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="inputEmail" class="col-sm-2 control-label">邮箱</label>
-										<div class="col-sm-10">
-											<input type="email" class="form-control" id="inputEmail"
-												name="email" style="width: 300px" />
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="inputAddress" class="col-sm-2 control-label">地址</label>
-										<div class="col-sm-10">
-											<input type="text" class="form-control" id="inputAddress"
-												name="address" style="width: 300px" />
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="col-sm-offset-2 col-sm-10">
-											<button type="submit" class="btn btn-default btn-primary">注册</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-
-					</div>
-
-				</div> -->
-
-
-
 				<div id="myCarousel" class="carousel slide">
 					<!-- 轮播（Carousel）指标 -->
 					<ol class="carousel-indicators">
@@ -167,51 +92,68 @@
 						<span class="sr-only">Next</span>
 					</a>
 				</div>
-
-
+				
 				<h2>二手好房</h2>
 				<p>好房源那么多，我们为您精选</p>
 
-
-
-
 				<div class="row">
 					<div class="col-sm-6 col-md-3">
-						<a href="#" class="thumbnail"> <img src="images/f1.jpg"
+						<a href="login.html" class="thumbnail"> <img src="images/f9.jpg"
 							alt="通用的占位符缩略图">
 						</a>
 						<p class="text-center">市北-同安路</p>
 						<p class="text-center">浮山后六小区</p>
 					</div>
 					<div class="col-sm-6 col-md-3">
-						<a href="#" class="thumbnail"> <img src="images/f2.jpg"
+						<a href="login.html" class="thumbnail"> <img src="images/f15.jpg"
 							alt="通用的占位符缩略图">
 						</a>
 						<p class="text-center">市北-浮山后</p>
 						<p class="text-center">浮山后一小区</p>
 					</div>
 					<div class="col-sm-6 col-md-3">
-						<a href="#" class="thumbnail"> <img src="images/f3.jpg"
+						<a href="login.html" class="thumbnail"> <img src="images/f13.jpg"
 							alt="通用的占位符缩略图">
 						</a>
 						<p class="text-center">城阳-十梅庵</p>
 						<p class="text-center">天泰城迦南美地</p>
 					</div>
 					<div class="col-sm-6 col-md-3">
-						<a href="#" class="thumbnail"> <img src="images/f4.jpg"
+						<a href="login.html" class="thumbnail"> <img src="images/f14.png"
 							alt="通用的占位符缩略图">
 						</a>
 						<p class="text-center">李沧-下王埠</p>
 						<p class="text-center">百通馨苑三区</p>
 					</div>
 				</div>
+				
+				<h2>小区精选</h2>
+				<p>纵览小区，恋上这座城</p>
 
-
+				<div class="row">
+					<div class="col-sm-6 col-md-4">
+						<a href="login.html" class="thumbnail"> <img src="images/f6.jpg"
+							alt="通用的占位符缩略图">
+						</a>
+						<p class="text-center">乐天家园</p>
+						<p class="text-center">2010年建</p>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<a href="login.html" class="thumbnail"> <img src="images/f8.jpg"
+							alt="通用的占位符缩略图">
+						</a>
+						<p class="text-center">长沙小区</p>
+						<p class="text-center">2008年建</p>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<a href="login.html" class="thumbnail"> <img src="images/f7.png"
+							alt="通用的占位符缩略图">
+						</a>
+						<p class="text-center">万科紫台</p>
+						<p class="text-center">2014年建</p>
+					</div>
+				</div>
 			</div>
-
 		</div>
 	</div>
-
-	<script src="js/city.js"></script>
-	<script src="js/method.js"></script>
 </body>

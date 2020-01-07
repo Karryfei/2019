@@ -33,7 +33,7 @@ public interface HouseDao {
 	public List<House> selectByUserid(int id);
 
 	// 新增
-	@Insert("insert into hms_house (topic,userid,position,posidetail,shape,area,houseage,price,type,img,creattime,description ) values(#{topic},#{userid},#{position},#{posidetail},#{shape},#{area},#{houseage},#{price},#{type},#{img},#{creattime},#{description})")
+	@Insert("insert into hms_house (topic,userid,position,posidetail,shape,area,houseage,price,type,img,creattime,description,layout,unitPrice,name,tel,email ) values(#{topic},#{userid},#{position},#{posidetail},#{shape},#{area},#{houseage},#{price},#{type},#{img},#{creattime},#{description},#{layout},#{unitPrice},#{name},#{tel},#{email})")
 	public void insert(House h);
 
 	@Delete("delete from hms_house where userid=#{userid} and id=#{houseid}")

@@ -41,8 +41,8 @@
   	  success: function(data){
   		  for(var i=0;i<data.length;i++){
   			  var id=data[i].id;
-  			  var item="<li><div  style='display: inline-block; width: 30%; height: 150px;'><img style='height: 180px; width: 300px;' src='images/"+data[i].img+"'></div>"
-  			  +"<div style='display: inline-block; width: 70%;'>"
+  			  var item="<li><div  style='display: inline-block; width: 23%; height: 150px;'><img style='height: 150px; width: 230px;' src='images/"+data[i].img+"'></div>"
+  			  +"<div style='display: inline-block; width: 76%;'>"
   			  +"<h2 style='margin-bottom: 20px;'>"+data[i].topic+"</h2>"
   			  +"<p style='float: right; color: red; font-size: 20px;'>"+(data[i].price/10000)+"万元</p>"
   			  +"<b style='display: block; margin-bottom: 20px;'>类型："+data[i].typeName+"</b>"

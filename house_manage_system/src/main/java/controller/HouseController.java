@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import model.House;
 import model.User;
@@ -73,17 +77,39 @@ public class HouseController {
 		return service.selectHouseCount(txt);
 	}
 
-	@RequestMapping("insert")
-	public String insert(String files, House h, HttpSession s) {
-		System.out.println(h.getPosition());
+    //发布新房屋
+	@RequestMapping("post")
+	public String post(@RequestParam("file") CommonsMultipartFile file, House h, HttpSession s)
+			throws IOException {
+		String fileName = file.getOriginalFilename();
+		System.out.println(fileName);
+		String path = "D:\\eclipse-jee-neon-R-win32-x86_64\\workspace\\house_manage_system\\src\\main\\webapp\\images\\"
+				+ fileName;
+		File newFile = new File(path);
+		// 通过CommonsMultipartFile的方法直接写文件（注意这个时候）
+		file.transferTo(newFile);
+
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
 		h.setCreattime(df.format(new Date()));// new Date()为获取当前系统时间
-		h.setImg(files);
+
+		h.setImg(fileName);
 		User user = (User) s.getAttribute("user");
 		h.setUserid(user.getId());
-		System.out.println(h.getImg()+"--"+h.getName()+"--"+h.getTopic()+"--"+h.getArea());
+		h.setTel(user.getTel());
+		h.setName(user.getName());
+		h.setEmail(user.getEmail());
+
+		String ting = (h.getLayout().equals("0") ? "" : h.getLayout() + "厅");
+		h.setLayout(h.getShape() + "室" + ting);
+		System.out.println(h.getLayout());
+
+		h.setPrice(h.getPrice() * 10000);
+		h.setUnitPrice((int) (h.getPrice() / h.getArea()));
+
+		System.out.println(h.getImg() + "--" + h.getName() + "--" + h.getTopic() + "--" + h.getArea());
 		service.insert(h);
-		return "redirect:/index.html";
+		return "redirect:/login_success.jsp";
+
 	}
 
 	// 查看房子详情

@@ -1,139 +1,161 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<title>发布</title>
-<link href="css/picup.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="layui/layui.all.js"></script>
-<style type="text/css">
-.info input {
-	height: 40px;
-	width: 78%;
-	margin: 1%;
-	margin-left: 60px;
-	border: 0;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Application - Input Form by Tooplate</title>
 
-.info select {
-	height: 40px;
-	width: 80%;
-	margin-left: 10px;
-	margin-bottom: 1.5%;
-	border: 0;
-	appearance: none;
-	-moz-appearance: none; /* Firefox */
-	-webkit-appearance: none; /* Safari 和 Chrome */
-}
-}
-</style>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/materialize.min.css">
+<link rel="stylesheet" href="css/tooplate.css">
 </head>
-<body>
-	<div style="height: 210px; background-color: rgb(245, 245, 245);">
 
+<body id="application">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  mx-auto">
+				<header class="mt-5 mb-5 text-center">
+					<h3>我要发布</h3>
+					<p class="tm-form-description">数万线下门店 · 快速全城推广 · 专业经纪人服务</p>
+				</header>
+				<form action="house/post.do" method="post" enctype="multipart/form-data"
+					class="tm-form-white tm-font-big">
+					<div class="tm-bg-white tm-form-pad-big">
+						<div class="form-group mb-5">
+							<div class="input-field">
+								<input placeholder="标题" id="topic" name="topic" type="text"
+									class="validate">
+							</div>
+							<div class="input-field">
+								<input placeholder="面积（平方米）" id="area" name="area" type="text"
+									class="validate">
+							</div>
+							<div class="input-field">
+								<input placeholder="售价（万元）请输入整数" id="price" name="price"
+									type="text" class="validate">
+							</div>
+							<div class="input-field">
+								<input placeholder="楼龄（年）" id="houseage" name="houseage"
+									type="text" class="validate">
+							</div>
 
-		<div style="height: 70px;">
-			<img style="float: left; margin: 5px;" src="images/house.png">
-			<h1
-				style="float: left; display: inline-block; margin: 0; color: #6756EA;">青大找房</h1>
-			<h3
-				style="float: left; display: inline-block; margin-top: 10px; margin-left: 30px; color: #6756EA;">我要卖房</h3>
-		</div>
-		<div style="height: 80px; text-align: center;">
-			<h1>发布出售房源</h1>
-			<p style="color: #9199AA;">数万线下门店 · 快速全城推广 · 专业经纪人服务</p>
-		</div>
-	</div>
+						</div>
+						<div class="row">
+							<div
+								class="form-group col-xl-6 col-lg-6 col-md-6 col-12 pl-0 tm-form-group-2-col tm-form-group-2-col-l">
+								<select name="shape">
+									<option value="">室</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+							</div>
+							<div
+								class="form-group mb-2 col-xl-6 col-lg-6 col-md-6 col-12 pr-0 tm-form-group-2-col tm-form-group-2-col-r">
+								<select name="layout">
+									<option value="">厅</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div
+								class="form-group col-xl-6 col-lg-6 col-md-6 col-12 pl-0 tm-form-group-2-col tm-form-group-2-col-l">
+								<label for="position" class="black-text mb-4 big">位置</label> <select
+									name="position">
+									<option value="">所在区</option>
+									<option value="崂山区">崂山区</option>
+									<option value="市南区">市南区</option>
+									<option value="市北区">市北区</option>
+									<option value="李沧区">李沧区</option>
+									<option value="城阳区">城阳区</option>
+									<option value="即墨区">即墨区</option>
+									<option value="市海岸新区">市海岸新区</option>
+								</select>
+							</div>
+							<div
+								class="form-group mb-2 col-xl-6 col-lg-6 col-md-6 col-12 pr-0 tm-form-group-2-col tm-form-group-2-col-r">
+								<label for="type" class="black-text mb-4 big">房屋类别</label> <select
+									name="type">
+									<option value="">请选择类别</option>
+									<option value="0">公寓</option>
+									<option value="1">住宅</option>
+									<option value="2">工业厂房</option>
+									<option value="3">别墅</option>
+									<option value="4">商业办公</option>
+								</select>
+							</div>
 
-	<div
-		style="width: 15%; height: 1px; float: left; display: inline-block;">
-	</div>
+						</div>
+						<div class="row">
+							<div
+								class="form-group col-xl-6 col-lg-6 col-md-6 col-12 pl-0 tm-form-group-2-col tm-form-group-2-col-l">
+								<label for="file" class="black-text mb-4 big">选择图片</label>
+								<div class="file-field input-field">
+									<div class="btn btn-white">
+										<span>Browse...</span> <input type="file" name="file">
+									</div>
+									<div class="file-path-wrapper">
+										<input class="file-path validate" name="file" type="text"
+											placeholder="">
+									</div>
 
-	<div style="width: 40%; float: left; display: inline-block;">
+								</div>
+							</div>
 
-		<form action="house/insert.do" method="post">
-			<div class="img-box full">
+						</div>
+						<div class="form-group mb-5">
+							
+							<div class="input-field">
+								<input placeholder="详细位置" id="posidetail" name="posidetail" type="text"
+									class="validate">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="description" class="black-text mb-4 big">房屋描述</label>
+							<textarea class="p-3" name="description" id="description" cols="30"
+								rows="4"></textarea>
+						</div>
 
-				<section class=" img-section">
-					<div class="z_photo upimg-div clear">
-						<section class="z_file fl">
-							<img src="images/a11.png" class="add-img">
-						</section>
 					</div>
-				</section>
-			</div>
-			<div class="info">
-				<div>
-					<b>标题</b> <input type="text" name="topic" placeholder="请输入标题" />
-					<hr>
-				</div>
-				<div>
-					<b>位置</b> <span style="margin-left: 20px;">青岛</span> <select
-						name="position">
-						<option value="" style="color: #D1D1D1;">请输入位置</option>
-						<option value="崂山区">崂山区</option>
-						<option value="市南区">市南区</option>
-						<option value="市北区">市北区</option>
-						<option value="李沧区">李沧区</option>
-						<option value="城阳区">城阳区</option>
-						<option value="即墨区">即墨区</option>
-						<option value="市海岸新区">市海岸新区</option>
-					</select>
-					<hr>
-				</div>
-				<div>
-					<b>详细地址</b> <input style="margin-left: 30px;" type="text"
-						name="posidetail" placeholder="请输入详细地址" />
-					<hr>
-				</div>
-				<div>
-					<b>房屋面积</b> <input style="margin-left: 30px;" type="text"
-						name="area" placeholder="请输入房屋面积" />
-					<hr>
-				</div>
-				<div>
-					<div>
-						<b>房屋类别</b> <select style="margin-left: 30px;" name="type">
-							<option value="">请输入类别</option>
-							<option value="0">公寓</option>
-							<option value="1">住宅</option>
-							<option value="2">工业厂房</option>
-							<option value="3">别墅</option>
-							<option value="4">商业办公</option>
-						</select>
-						<hr>
+					<div class="text-center mt-5">
+						<button type="submit"
+							class="waves-effect btn-large btn-large-white">提交</button>
 					</div>
-					<b>房型</b> <input type="text" name="shape" placeholder="请输入房型" />
-					<hr>
-				</div>
-				<div>
-					<b>楼龄</b> <input type="text" name="houseage" placeholder="请输入楼龄" />
-					<hr>
-				</div>
-				<div>
-					<b>描述</b> <input type="text" name="description" placeholder="请输入描述" />
-					<hr>
-				</div>
-				<div>
-					<b>售价</b> <input type="text" name="price" placeholder="请输入售价（万元）" />
-					<hr>
-				</div>
-				<input
-					style="margin-left: 80%; width: 150px; color: #FFFFFF; background-color: rgb(48, 114, 246); font-size: 20px;"
-					type="submit" />
+				</form>
 			</div>
-		</form>
+		</div>
 	</div>
-	<div style="width: 40%; float: left; display: inline-block;">
-		<img src="images/house.jpg"
-			style="margin-left: 15%; margin-top: 50px;">
-	</div>
-	<script src="js/jquery-2.2.4.min.js"></script>
-	<script src="js/pics.js"></script>
-	<script type="text/javascript">
-		/* pics_init(["/upload/499d9394-3570-45f2-a00a-357024f48f53.png",
-		 "/upload/1d653587-292c-4e4a-92e9-7253630fc758.jpg",
-		 "/upload/7a98d1bf-4920-4270-9605-0f91c7d6e496.jpg"]); */
+
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('select').formSelect();
+		});
 	</script>
 </body>
-</html>
 
+</html>
