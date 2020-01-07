@@ -69,15 +69,16 @@
 						<div class="item">
 							<img src="images/3.jpg" alt="Second slide">
 							<div class="carousel-caption">
-								<h4>棒球</h4>
-								<p>棒球运动是一种以棒打球为主要特点，集体性、对抗性很强的球类运动项目，在美国、日本尤为盛行。</p>
+								<h4>愿你这一生</h4>
+								<p>既有随处可栖的江湖，也有追风逐梦的骁勇。</p>
 							</div>
 						</div>
 						<div class="item">
 							<img src="images/4.jpg" alt="Third slide">
 							<div class="carousel-caption">
-								<h4>棒球</h4>
-								<p>棒球运动是一种以棒打球为主要特点，集体性、对抗性很强的球类运动项目，在美国、日本尤为盛行。</p>
+								<h4>愿陪你一起</h4>
+								<p>走遍世界的所有角落，看尽人间的繁华与平凡。</p>
+								
 							</div>
 						</div>
 					</div>
