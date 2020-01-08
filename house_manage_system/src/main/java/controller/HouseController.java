@@ -83,7 +83,7 @@ public class HouseController {
 			throws IOException {
 		String fileName = file.getOriginalFilename();
 		System.out.println(fileName);
-		String path = "C:\\Users\\dell\\Desktop\\ttemp\\house_manage_system\\src\\main\\webapp\\images\\"
+		String path = "D:\\Git\\2019\\house_manage_system\\src\\main\\webapp\\images\\"
 				+ fileName;
 		File newFile = new File(path);
 		// 通过CommonsMultipartFile的方法直接写文件（注意这个时候）
@@ -149,6 +149,14 @@ public class HouseController {
 	public String selectByUser(int id, HttpSession session, ModelMap m) {
 		m.put("house", service.selectByUserid(id));
 		m.put("houseSize", service.selectByUserid(id).size());
+		return "manage_post";
+	}
+
+	@RequestMapping("deleteOrder")
+	public String deleteByOrder(int houseid, int userid, HttpSession session, ModelMap m) {
+		service.delete(houseid, userid);
+		coolectionService.deleteByPoster(houseid);
+		m.put("house", service.select(null, null, null));
 		return "manage_post";
 	}
 

@@ -18,28 +18,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span><span
-					class="icon-bar"></span><span class="icon-bar"></span><span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="../houseInfo.jsp" target="houseInfo">首页</a>
-		</div>
-	
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li><h4>${sessionScope.user.name},欢迎登录！</h4></li>
-				<li><a href="user/select.do">用户列表</a></li>
-				<li><a href="house/selectAll.do">房源列表</a></li>
-				<li><a href="post.html">官方发布</a></li>
-				<li><a href="user/outlogin.do">退出</a></li>
-			</ul>
-		</div>
-	</nav>
+	<!-- nav -->
 	
 	<ul class="ul" style="list-style: none;">
 		<c:forEach items="${sessionScope.individuals}" var="indiv" varStatus="status">

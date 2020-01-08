@@ -18,7 +18,7 @@
 </head>
 <body>
 	
-	<nav class="navbar navbar-default" role="navigation">
+	<%-- <nav class="navbar navbar-default" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target="#bs-example-navbar-collapse-1">
@@ -39,7 +39,7 @@
 				<li><a href="../user/outlogin.do">退出</a></li>
 			</ul>
 		</div>
-	</nav>
+	</nav> --%>
 	
 	<c:if test="${houseSize==0}">
 		
@@ -50,11 +50,12 @@
 
 	</c:if>
 	
+	<br><br>
 	<ul class="ul" style="list-style: none;">
 		<c:forEach items="${house}" var="house" varStatus="status">
 			<li>
 				<div style="display: inline-block; width: 23%; height: 150px;">
-					<img style="height: 150px; width: 230px;" src="../images/${house.img}">
+					<img style="height: 150px; width: 230px; float: left" src="../images/${house.img}">
 				</div>
 				<div style="display: inline-block; width: 76%;">
 					<h2 style="margin-bottom: 20px;">${house.topic}</h2>
@@ -66,7 +67,7 @@
 					<div style="height: 20px;"></div>
 					<span>${house.creattime}发布<span> 
 					
-					<a style="float: right; display: inline-block; height: 23px;width: 80px;background-color: rgb(255,85,46);margin-left: 5px;text-align: center;color: black;text-decoration:none;"  href="delete.do?houseid=${house.id}"><strong>点击删除</strong></a>
+					<a style="float: right; display: inline-block; height: 23px;width: 80px;background-color: rgb(255,85,46);margin-left: 5px;text-align: center;color: black;text-decoration:none;"  href="deleteOrder.do?houseid=${house.id}&&userid=${house.userid}"><strong>点击删除</strong></a>
 					<a style="float: right;" target="_blank" href="../house/detail.do?id=${house.id}">查看详情</a>
 				</div>
 				<hr>

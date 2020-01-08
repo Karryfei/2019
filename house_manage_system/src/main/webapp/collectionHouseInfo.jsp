@@ -62,11 +62,12 @@
 
 	</c:if>
 	
+	<br><br>
 	<ul class="ul" style="list-style: none;">
 		<c:forEach items="${house}" var="house" varStatus="status">
 			<li>
 				<div style="display: inline-block; width: 23%; height: 150px;">
-					<img style="height: 150px; width: 230px;" src="../images/${house.img}">
+					<img style="height: 150px; width: 230px; float: left" src="../images/${house.img}">
 				</div>
 				<div style="display: inline-block; width: 76%;">
 					<h2 style="margin-bottom: 20px;">${house.topic}</h2>

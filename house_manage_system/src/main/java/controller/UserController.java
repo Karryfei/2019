@@ -111,7 +111,7 @@ public class UserController {
 			s.setAttribute("user", user);
 			s.setMaxInactiveInterval(100000);
 			s.setAttribute("individuals", service.selectAll());
-			return "redirect:/manage_user.jsp";
+			return "redirect:/Test.html";
 		} else {
 			return "redirect:/admin_login.html";
 		}
